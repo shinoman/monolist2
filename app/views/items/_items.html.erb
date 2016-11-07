@@ -1,19 +1,21 @@
 <div class="container">
   <div class="container-inner inner-default clearfix">
+    <%# page_entries_info @items %>
     <% items.each do |item| %>
-    <% #itemイメージ取得 %>
-    <% @item_img = item["mediumImageUrls"].first["imageUrl"].gsub("?_ex=128x128", "") %>
     <% #item名取得 %>
     <% @item_name = item["itemName"] %>
+    <% #itemイメージ取得 %>
+    <% if item["mediumImageUrls"].first != nil %>
+      <% @item_img_tag = item["mediumImageUrls"].first["imageUrl"].gsub("?_ex=128x128", "") %>
+      <% @item_img = image_tag(@item_img_tag , alt: @item_name) %>
+    <% else %>
+      <% @item_img = image_tag("no-image.png" , alt: @item_name) %>
+    <% end %>
       <div class="item-box">
         <div class="image">
           <div class="img-wrap">
             <% #TODO 商品画像 %>
-            <% if @item_img != nil %>
-              <%= image_tag(@item_img , alt: item["itemName"]) %>
-            <% elsif %>
-              <%= image_tag("no-image.png" , alt: item['itemName']) %>
-            <% end %>
+            <%= @item_img %>
           </div>
         </div>
         <div class="detail">
@@ -35,8 +37,7 @@
                       :method => :post %>
         </div>
       </div>
-      <% #@item_img初期化 %>
-      <% @item_img = nil %>
     <% end %>
+    <% #paginate @items %>
   </div>
 </div>
