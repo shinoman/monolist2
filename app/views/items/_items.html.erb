@@ -1,17 +1,25 @@
 <div class="container">
   <div class="container-inner inner-default clearfix">
     <% items.each do |item| %>
+    <% #itemイメージ取得 %>
+    <% @item_img = item["mediumImageUrls"].first["imageUrl"].gsub("?_ex=128x128", "") %>
+    <% #item名取得 %>
+    <% @item_name = item["itemName"] %>
       <div class="item-box">
         <div class="image">
           <div class="img-wrap">
             <% #TODO 商品画像 %>
-            <%= image_tag("no-image.png" , alt: item['itemName']) %>
+            <% if @item_img != nil %>
+              <%= image_tag(@item_img , alt: item["itemName"]) %>
+            <% elsif %>
+              <%= image_tag("no-image.png" , alt: item['itemName']) %>
+            <% end %>
           </div>
         </div>
         <div class="detail">
           <p class="title">
             <% #TODO 商品タイトル %>
-            仮タイトル
+            <%= @item_name %>
           </p>
         </div>
         <div class="action clearfix">
@@ -27,6 +35,8 @@
                       :method => :post %>
         </div>
       </div>
+      <% #@item_img初期化 %>
+      <% @item_img = nil %>
     <% end %>
   </div>
 </div>
