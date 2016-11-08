@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <meta property="title" content="<%= @user.name %> - monolist" />
+  <meta property="description" content="<%= @user.name %>のプロフィール。<%= @user.name %>の欲しいもの持っているものを表示しています。" />
+<% end %>
 <%= render 'profile' , user: @user %>
 
 
