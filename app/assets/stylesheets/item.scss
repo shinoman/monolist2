@@ -156,16 +156,21 @@
     }
     .side-box-body {
       padding: 15px;
+      padding-top:0px;
       .gravatar {
         img {
           margin: 2px;
         }
       }
-      div{
-          width:60px;
-          height:90px !important;
-          margin-top:-45px !important;
-        }
+      li{
+        display: inline-block;
+        list-style:none;
+        div{
+            width:65px;
+            height:90px !important;
+            margin-top:-10px !important;
+          }
+      }
     }
   }
 }
