@@ -22,24 +22,25 @@
         <h4 class="side-box-title">Haveしたユーザー</h4>
         <div class="side-box-body">
           <% # TODO Haveしたユーザー一覧 %>
+          <ul>
           <% @haves.each do |f| %>
           　 <li><div>
           　 <center><%= link_to gravatar_for(f, size: 60), f %><br>
               <span class="user"><%= link_to f.name, f %></span>
              </center></div></li>
-          <% end %>
+          <% end %></ul>
         </div>
       </div>
       <div class="side-box">
         <h4 class="side-box-title">Wantしたユーザー</h4>
         <div class="side-box-body">
           <% # TODO Wantしたユーザー一覧 %>
-                    <% @wants.each do |f| %>
+              <ul><% @wants.each do |f| %>
           　 <li><div>
           　 <center><%= link_to gravatar_for(f, size: 60), f %><br>
               <span class="user"><%= link_to f.name, f %></span>
              </center></div></li>
-          <% end %>
+          <% end %></ul>
         </div>
       </div>
       <div class="text-center">
