@@ -2,12 +2,13 @@ div.side-box-body{
     div.ranking-box{
         width:17%;
         display:inline-block;
-            div.detail{
-                height:40px;
-                word-wrap:break-all;
-                overflow:hidden;
-            }
     }
+}
+div.detail{
+    height:40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 @media (max-width: 700px) {
   .raning-box{
