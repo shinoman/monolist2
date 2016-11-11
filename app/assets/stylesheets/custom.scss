@@ -1,0 +1,16 @@
+div.side-box-body{
+    div.ranking-box{
+        width:17%;
+        display:inline-block;
+            div.detail{
+                height:40px;
+                word-wrap:break-all;
+                overflow:hidden;
+            }
+    }
+}
+@media (max-width: 700px) {
+  .raning-box{
+    width:33.3333%;
+  }
+}

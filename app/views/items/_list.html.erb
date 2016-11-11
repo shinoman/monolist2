@@ -12,9 +12,7 @@
           </div>
         </div>
         <div class="detail">
-          <p class="title">
-            <%= item.title %>
-          </p>
+            <p><%= item.title %></p>
         </div>
         <%= render 'items/action' , item: item if logged_in? %>
       </div>
