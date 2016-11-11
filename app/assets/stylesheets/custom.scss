@@ -6,9 +6,15 @@ div.side-box-body{
 }
 div.detail{
     height:40px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+     margin: 0;
+      overflow : hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      p{
+          line-height: 1.6;
+      }
 }
 @media (max-width: 700px) {
   .raning-box{
