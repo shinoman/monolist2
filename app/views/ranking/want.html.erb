@@ -11,9 +11,11 @@
           　                     <center><%= image_tag(i.medium_image , alt: i.title ,:class => "item_img") %><br>
                                 <div class="detail">
                                     <p class="title">
-                                        <a href = i.detail_page_url><%= i.title %></a>
+                                        <%= link_to i.title , i.detail_page_url %>
                                     </p>
-                            </center></div></li>
+                                </div>
+                                </center>
+                            </div>
                         <% end %>
                     </div>
                 </div>
