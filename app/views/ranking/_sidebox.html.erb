@@ -1,0 +1,25 @@
+<% @item = item.ranking %>
+<div class="container">
+    <div class="container-inner inner-sm clearfix">
+        <ol>
+            <% @items = Have.ranking %>
+            <div class="side-box">
+                <h4 class="side-box-title"><%= item %>ランキング</h4>
+                <div class="side-box-body">
+                    <% @items.each.with_index(1) do |i,count| %>
+                        <div class="ranking-box">
+                            第<%= count %>位
+                            <center><%= image_tag(i.medium_image , alt: i.title ,:class => "item_img") %><br>
+                                <div class="detail">
+                                    <p class="title">
+                                        <%= link_to i.title , i.detail_page_url %>
+                                    </p>
+                                </div>
+                            </center>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </ol>
+    </div>
+</div>
